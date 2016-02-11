@@ -1,0 +1,2 @@
+3-Math.pow(Math.sqrt(3),2)
+res6: Double = 4.440892098500626E-16

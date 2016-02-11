@@ -1,0 +1,4 @@
+scala> "crazy"*3
+res7: String = crazycrazycrazy
+
+* is found under scala.collection.immutable.StringOps

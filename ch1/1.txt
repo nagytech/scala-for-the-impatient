@@ -1,0 +1,5 @@
+!=   +    <=       >>             getClass       toDouble   toString   
+##   -    <init>   >>>            hashCode       toFloat    unary_+    
+%    /    ==       ^              isInstanceOf   toInt      unary_-    
+&    <    >        asInstanceOf   toByte         toLong     unary_~    
+*    <<   >=       equals         toChar         toShort    |          
