@@ -1,0 +1,2 @@
+The 'res' variables that originate from unassigned
+products in the REPL are immutable (val).

@@ -1,0 +1,9 @@
+The term '10 max 2' means return the maximum of the
+first number (10, this) number and the second number
+(2, that).
+
+In our case, '10 max 2' returns 10.
+
+In this case, 'max' is defined in the RichInt class, but 
+is also found in other Rich numeric classes like 
+RichDouble and RichFloat.

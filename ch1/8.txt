@@ -1,4 +1,0 @@
-import scala.util.Random
-
-val rand: BigInt = Random.nextInt
-rand.toString(36)
