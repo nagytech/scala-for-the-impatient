@@ -2,11 +2,7 @@ import scala.collection.mutable.ArrayBuffer
 
 def noSort(nums: Array[Int]): Array[Int] = {
 
-  var res = ArrayBuffer[Int]()
-  val part = nums.partition(_ > 0)
-  res ++= part._1
-  res ++= part._2
-  res
+  Array.concat(nums.partition(_ > 0))
 
 }
 
