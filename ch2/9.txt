@@ -1,0 +1,10 @@
+def product(s: String) : Long = {
+  
+  if (s.length > 0)
+    product(s.tail) * s.head
+  else
+    1
+
+}
+
+println(product("Hello"))

@@ -1,0 +1,8 @@
+val s = "Hello"
+var t: Long = 1
+
+
+for (c <- s)
+  t *= c.toInt
+
+println(t)
