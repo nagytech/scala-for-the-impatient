@@ -1,8 +1,0 @@
-def countdown(n: Int) {
-    // Note, will have issues where n < 0
-    for (i <- (0 to n).reverse) {
-      println(i)
-  }
-}       
-
-countdown(5)

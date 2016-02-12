@@ -1,3 +1,10 @@
+// Recursive function that performs some really obscure math
+//
+// - If n is even and positive:   (x^(n/2))^2
+// - If n is odd and positive:    x*x^(n-1)
+// - If n is 0:                   1
+// - If n is negative:            1/(x^-n)
+
 def fxn(x: Double, n: Int): Double = {
   
   if (n == 0)
@@ -7,12 +14,14 @@ def fxn(x: Double, n: Int): Double = {
   else if (n > 0)
   {
     if (n % 2 == 0) {
-      math.pow(fxn(x, n / 2), 2) // fxn(fxn(x, n / 2), 2) causes infinite depth
+      // NOTE: fxn(fxn(x, n / 2), 2) causes infinite depth, so 
+      // I'm just using math.pow here.
+      math.pow(fxn(x, n / 2), 2)
     } else {
       x * fxn(x, n - 1)
     }
   }
-  else 
+  else // Negative
   {
     1 / fxn(x, -n)
   }
