@@ -1,3 +1,17 @@
-import java.util.TimeZone._
+import java.util.TimeZone.getAvailableIDs
 
-getAvailableIDs.filter(_.startsWith("America/")).map(_.substring(8)).sorted
+// Returns a list of time zones under the given prefix
+def timeZoneFilter(prefix: String): Array[String] = {
+  
+  val withSlash = prefix + '/';
+
+  getAvailableIDs
+    .filter(_.startsWith(withSlash))
+    .map(_.substring(withSlash.length))
+    .sorted
+
+}
+
+timeZoneFilter("America")
+timeZoneFilter("Europe")
+
