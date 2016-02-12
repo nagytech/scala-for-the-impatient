@@ -1,7 +1,7 @@
 // Swap neighbouring positions in an array without 
 // overlapping.
 
-def arrSwap(a: Array[Int]): Array[Int] = {
+def arrSwap(arr: Array[Int]): Array[Int] = {
 
   val newArr = Array.ofDim[Int](arr.length)
 
