@@ -6,6 +6,8 @@ txt.apply(0)
 txt(0)
 // or 
 txt.take(1)
+// or
+txt.head
 
 // Last character 'h'
 txt.last
