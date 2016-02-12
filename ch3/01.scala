@@ -9,7 +9,7 @@ import scala.util.Random
 //
 def randArray(n: Int): Array[Int] = {
   var arr = Array.ofDim[Int](n)
-  for (i <- 0 to n - 1)
+  for (i <- 0 until n)
     arr(i) = Random.nextInt(n)
   arr
 }
