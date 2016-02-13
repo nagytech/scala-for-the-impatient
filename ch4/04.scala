@@ -1,9 +1,9 @@
 import scala.io.Source
-import scala.collection.immutable.HashMap
+import scala.collection.immutable.TreeMap
 
-// Using an immutable map
-def wordCount(txt: String): HashMap[String, Int] = {
-  var map = HashMap[String, Int]()
+// Sorted map
+def wordCount(txt: String): TreeMap[String, Int] = {
+  var map = TreeMap[String, Int]()
   txt.split("\\W+").foreach({
     w => map = map + (w -> (map.getOrElse(w, 0) + 1))
   })
