@@ -3,7 +3,7 @@ import scala.collection.mutable.HashMap
 
 def wordCount(txt: String): HashMap[String, Int] = {
   val map = HashMap[String, Int]()
-  txt.split("\\s+").foreach(word =>
+  txt.split("\\W+").foreach(word =>
       if (map.contains(word))
         map(word) += 1 
       else
