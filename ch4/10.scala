@@ -4,5 +4,4 @@
 
 "Hello".zip("World") foreach { set =>
       println(set._1 + " " + set._2)
-  }
-    
+}
