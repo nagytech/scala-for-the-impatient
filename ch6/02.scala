@@ -3,14 +3,6 @@ class UnitConversion(val constant: Double) {
   def reverse(m: Double): Double = m / constant
 }
 
-object InchesToCentimeters extends UnitConversion(2.54) {
-
-}
-
-object GallonsToLiters extends UnitConversion(3.79) {
-
-}
-
-object MilesToKilometers extends UnitConversion(1.61) {
-  
-}
+object InchesToCentimeters extends UnitConversion(2.54)
+object GallonsToLiters extends UnitConversion(3.79)
+object MilesToKilometers extends UnitConversion(1.61)
