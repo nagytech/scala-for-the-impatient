@@ -1,5 +1,5 @@
 class BankAccount(initialBalance: Double) {
-  private var balance = initialBalance
+  protected[this] var balance = initialBalance
   def currentBalance = balance
   def deposit(amount: Double) = { balance += amount; balance }
   def withdraw(amount: Double) = { balance -= amount; balance }
@@ -9,12 +9,18 @@ class BankAccount(initialBalance: Double) {
 class SavingsAccount(initialBalance: Double) extends BankAccount(initialBalance: Double) {
   private val freeTransactions: Int = 1
   private val chargePerTransaction: Double = 1
+  private val interestRate: Double = 0.04
   private var transactionsThisMonth: Int = 0
   override def deposit(amount: Double) = {
     transact(super.deposit(amount))
   }
   override def withdraw(amount: Double) = {
     transact(super.withdraw(amount))
+  }
+  def earnMonthlyInterest() {
+    // TODO: Thread locking, etc
+    balance += balance * interestRate
+    transactionsThisMonth = 0
   }
   private def transact(func: => Double) = {
     // TODO: Thread locking, etc.
@@ -26,11 +32,15 @@ class SavingsAccount(initialBalance: Double) extends BankAccount(initialBalance:
 }
 
 val s = new SavingsAccount(100)
-s.withdraw(1)
+s.withdraw(1) // 100 - 1 = 99
 println(s.currentBalance)
-s.withdraw(1)
+s.withdraw(1) // 99 - 1 = 98
 println(s.currentBalance)
-s.withdraw(1)
+s.withdraw(1) // 98 - 1 = 97
 println(s.currentBalance)
-s.deposit(4)
+s.deposit(4) // 97 + 4 - 1 = 100
+println(s.currentBalance)
+s.earnMonthlyInterest() // 100 + 0.04% = 104
+println(s.currentBalance)
+s.deposit(4) // 100 + 4 = 104
 println(s.currentBalance)
