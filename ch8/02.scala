@@ -14,7 +14,7 @@ class SavingsAccount(initialBalance: Double) extends BankAccount(initialBalance:
     transact(super.deposit(amount))
   }
   override def withdraw(amount: Double) = {
-    transact(super.withdraw(amount))
+    transact super.withdraw(amount)
   }
   private def transact(func: => Double) = {
     // TODO: Thread locking, etc.
